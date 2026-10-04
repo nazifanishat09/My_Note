@@ -6,21 +6,19 @@ class DarkTheme {
     brightness: Brightness.dark,
 
     colorScheme: ColorScheme.fromSeed(
-      seedColor: Colors.deepPurple,
+      seedColor: const Color(0xFF8B6CCF),
       brightness: Brightness.dark,
     ),
 
     appBarTheme: const AppBarTheme(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xFF3A2A5A),
       foregroundColor: Colors.white,
       elevation: 0,
     ),
 
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.deepPurple,
-        foregroundColor: Colors.white,
-      ),
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      backgroundColor: Color(0xFF8B6CCF),
+      foregroundColor: Colors.white,
     ),
   );
 }

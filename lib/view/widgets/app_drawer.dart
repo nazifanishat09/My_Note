@@ -1,0 +1,106 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil_plus/flutter_screenutil_plus.dart';
+import 'package:get/get.dart';
+
+import 'app_logo.dart';
+import 'drawer_item.dart';
+
+class AppDrawer extends StatelessWidget {
+  const AppDrawer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
+    return Drawer(
+      child: SafeArea(
+        child: Column(
+          children: [
+            // Header
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(20.w),
+              color: colorScheme.primary,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const AppLogo(size: 65),
+
+                  SizedBox(height: 14.h),
+
+                  Text(
+                    'My Note',
+                    style: TextStyle(
+                      color: colorScheme.onPrimary,
+                      fontSize: 24.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+
+                  SizedBox(height: 4.h),
+
+                  Text(
+                    'Your notes, organized simply.',
+                    style: TextStyle(
+                      color: colorScheme.onPrimary.withValues(
+                        alpha: 0.75,
+                      ),
+                      fontSize: 12.sp,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            SizedBox(height: 10.h),
+
+            DrawerItem(
+              icon: Icons.settings_outlined,
+              title: 'Settings',
+              onTap: () {
+                Get.back();
+              },
+            ),
+
+            DrawerItem(
+              icon: Icons.delete_outline_rounded,
+              title: 'Bin',
+              onTap: () {
+                Get.back();
+              },
+            ),
+
+            DrawerItem(
+              icon: Icons.dark_mode_outlined,
+              title: 'Theme',
+              onTap: () {
+                Get.back();
+              },
+            ),
+
+            DrawerItem(
+              icon: Icons.info_outline_rounded,
+              title: 'App Info',
+              onTap: () {
+                Get.back();
+              },
+            ),
+
+            const Spacer(),
+
+            Padding(
+              padding: EdgeInsets.only(bottom: 20.h),
+              child: Text(
+                'My Note • v1.0.0',
+                style: TextStyle(
+                  fontSize: 12.sp,
+                  color: colorScheme.onSurfaceVariant,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

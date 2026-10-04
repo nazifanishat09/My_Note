@@ -5,24 +5,22 @@ class LightTheme {
     useMaterial3: true,
     brightness: Brightness.light,
 
-    scaffoldBackgroundColor: Colors.white,
-
     colorScheme: ColorScheme.fromSeed(
-      seedColor: Colors.deepPurple,
+      seedColor: const Color(0xFF6C4AB6),
       brightness: Brightness.light,
     ),
 
+    scaffoldBackgroundColor: const Color(0xFFF9F7FC),
+
     appBarTheme: const AppBarTheme(
-      backgroundColor: Colors.deepPurple,
+      backgroundColor: Color(0xFF6C4AB6),
       foregroundColor: Colors.white,
       elevation: 0,
     ),
 
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.deepPurple,
-        foregroundColor: Colors.white,
-      ),
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      backgroundColor: Color(0xFF6C4AB6),
+      foregroundColor: Colors.white,
     ),
   );
 }

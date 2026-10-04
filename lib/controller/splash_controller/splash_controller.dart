@@ -3,16 +3,15 @@ import 'package:get/get.dart';
 import '../../view/pages/homepage/homepage.dart';
 
 
-
 class SplashController extends GetxController {
   @override
   void onInit() {
     super.onInit();
 
-    _goToHome();
+    _navigateToHome();
   }
 
-  Future<void> _goToHome() async {
+  Future<void> _navigateToHome() async {
     await Future.delayed(
       const Duration(seconds: 3),
     );

@@ -3,13 +3,14 @@ import 'package:flutter_screenutil_plus/flutter_screenutil_plus.dart';
 import 'package:get/get.dart';
 
 import '../../../controller/splash_controller/splash_controller.dart';
+import '../../widgets/app_logo.dart';
+
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Initialize Splash Controller
     Get.put(SplashController());
 
     final colorScheme = Theme.of(context).colorScheme;
@@ -20,24 +21,10 @@ class SplashScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // App Logo
-              Container(
-                width: 100.w,
-                height: 100.w,
-                decoration: BoxDecoration(
-                  color: const Color(0xFF6C4AB6),
-                  borderRadius: BorderRadius.circular(25.r),
-                ),
-                child: Icon(
-                  Icons.note_alt_rounded,
-                  size: 55.sp,
-                  color: Colors.white,
-                ),
-              ),
+              const AppLogo(),
 
               SizedBox(height: 24.h),
 
-              // App Name
               Text(
                 'My Note',
                 style: TextStyle(
@@ -49,7 +36,6 @@ class SplashScreen extends StatelessWidget {
 
               SizedBox(height: 8.h),
 
-              // Tagline
               Text(
                 'Your notes, organized simply.',
                 textAlign: TextAlign.center,

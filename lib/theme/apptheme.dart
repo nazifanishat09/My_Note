@@ -4,7 +4,6 @@ import 'darktheme.dart';
 import 'light theme.dart';
 
 
-
 class AppTheme {
   static ThemeData get lightTheme => LightTheme.theme;
 
