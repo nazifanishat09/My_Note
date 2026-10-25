@@ -6,7 +6,7 @@ import '../../../controller/note_controller/note_controller.dart';
 
 
 class AddNoteScreen extends StatefulWidget {
-  const AddNoteScreen({super.key});
+ const AddNoteScreen({super.key});
 
   @override
   State<AddNoteScreen> createState() => _AddNoteScreenState();
@@ -50,11 +50,11 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Add Note'),
+        title:  Text('Add Note'),
         actions: [
           IconButton(
             onPressed: saveNote,
-            icon: const Icon(Icons.check_rounded),
+            icon:  Icon(Icons.check_rounded),
           ),
         ],
       ),
@@ -69,7 +69,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                 fontSize: 21.sp,
                 fontWeight: FontWeight.bold,
               ),
-              decoration: const InputDecoration(
+              decoration:  InputDecoration(
                 hintText: 'Title',
                 border: InputBorder.none,
               ),
@@ -85,7 +85,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                 maxLines: null,
                 expands: true,
                 textAlignVertical: TextAlignVertical.top,
-                decoration: const InputDecoration(
+                decoration:  InputDecoration(
                   hintText: 'Write your note...',
                   border: InputBorder.none,
                 ),

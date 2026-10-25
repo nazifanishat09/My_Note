@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil_plus/flutter_screenutil_plus.dart';
 import 'package:get/get.dart';
+import 'package:noteapp/controller/appData/appData.dart';
+import 'package:noteapp/view/widgets/appber.dart';
 
 import '../../../controller/note_controller/note_controller.dart';
 import '../../widgets/app_drawer.dart';
@@ -8,7 +10,6 @@ import '../../widgets/app_search_field.dart';
 import '../../widgets/empty_note_view.dart';
 import '../../widgets/note_card.dart';
 import '../add_note_screen/add_note_screen.dart';
-
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -18,25 +19,14 @@ class HomeScreen extends StatelessWidget {
     final controller = Get.find<NoteController>();
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'My Note',
-          style: TextStyle(
-            fontSize: 22.sp,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
-
-      drawer: const AppDrawer(),
+      appBar: CustomAppBer(),
+      drawer: AppDrawer(),
 
       body: Padding(
         padding: EdgeInsets.all(16.w),
         child: Column(
           children: [
-            AppSearchField(
-              onChanged: controller.searchNotes,
-            ),
+            AppSearchField(onChanged: controller.searchNotes),
 
             SizedBox(height: 20.h),
 
@@ -45,7 +35,7 @@ class HomeScreen extends StatelessWidget {
                 final notes = controller.activeNotes;
 
                 if (notes.isEmpty) {
-                  return const EmptyNoteView();
+                  return EmptyNoteView();
                 }
 
                 return ListView.builder(
@@ -66,10 +56,7 @@ class HomeScreen extends StatelessWidget {
                           color: Colors.red,
                           borderRadius: BorderRadius.circular(16.r),
                         ),
-                        child: const Icon(
-                          Icons.delete_rounded,
-                          color: Colors.white,
-                        ),
+                        child: Icon(Icons.delete_rounded, color: Colors.white),
                       ),
 
                       confirmDismiss: (_) async {
@@ -84,9 +71,7 @@ class HomeScreen extends StatelessWidget {
                         return false;
                       },
 
-                      child: NoteCard(
-                        note: note,
-                      ),
+                      child: NoteCard(note: note),
                     );
                   },
                 );
@@ -97,13 +82,11 @@ class HomeScreen extends StatelessWidget {
       ),
 
       floatingActionButton: FloatingActionButton(
+        backgroundColor: primaryColor,
         onPressed: () {
-          Get.to(() => const AddNoteScreen());
+          Get.to(() => AddNoteScreen());
         },
-        child: Icon(
-          Icons.add_rounded,
-          size: 30.sp,
-        ),
+        child: Icon(Icons.add_rounded, size: 30.sp),
       ),
     );
   }

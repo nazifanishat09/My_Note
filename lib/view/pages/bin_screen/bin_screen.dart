@@ -7,7 +7,7 @@ import '../../widgets/note_card.dart';
 
 
 class BinScreen extends StatelessWidget {
-  const BinScreen({super.key});
+  BinScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class BinScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Bin'),
+        title:  Text('Bin'),
       ),
       body: Obx(() {
         final deletedNotes = controller.deletedNotes;
