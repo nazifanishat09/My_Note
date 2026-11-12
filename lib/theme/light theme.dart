@@ -6,19 +6,19 @@ class LightTheme {
     brightness: Brightness.light,
 
     colorScheme: ColorScheme.fromSeed(
-      seedColor: const Color(0xFF6C4AB6),
+      seedColor:  Color(0xFF6C4AB6),
       brightness: Brightness.light,
     ),
 
-    scaffoldBackgroundColor: const Color(0xFFF9F7FC),
+    scaffoldBackgroundColor:  Color(0xFFF9F7FC),
 
-    appBarTheme: const AppBarTheme(
+    appBarTheme: AppBarTheme(
       backgroundColor: Color(0xFF6C4AB6),
       foregroundColor: Colors.white,
       elevation: 0,
     ),
 
-    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+    floatingActionButtonTheme:  FloatingActionButtonThemeData(
       backgroundColor: Color(0xFF6C4AB6),
       foregroundColor: Colors.white,
     ),

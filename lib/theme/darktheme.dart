@@ -6,17 +6,16 @@ class DarkTheme {
     brightness: Brightness.dark,
 
     colorScheme: ColorScheme.fromSeed(
-      seedColor: const Color(0xFF8B6CCF),
+      seedColor:  Color(0xFF8B6CCF),
       brightness: Brightness.dark,
     ),
 
-    appBarTheme: const AppBarTheme(
+    appBarTheme:  AppBarTheme(
       backgroundColor: Color(0xFF3A2A5A),
       foregroundColor: Colors.white,
       elevation: 0,
     ),
-
-    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+    floatingActionButtonTheme:  FloatingActionButtonThemeData(
       backgroundColor: Color(0xFF8B6CCF),
       foregroundColor: Colors.white,
     ),

@@ -14,7 +14,7 @@ class ThemeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Theme'),
+        title:  Text('Theme'),
       ),
       body: Padding(
         padding: EdgeInsets.all(16.w),

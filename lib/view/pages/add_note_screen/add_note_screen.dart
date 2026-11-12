@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil_plus/flutter_screenutil_plus.dart';
 import 'package:get/get.dart';
+import 'package:noteapp/controller/appData/appData.dart';
 
 import '../../../controller/note_controller/note_controller.dart';
 
-
 class AddNoteScreen extends StatefulWidget {
- const AddNoteScreen({super.key});
+  const AddNoteScreen({super.key});
 
   @override
   State<AddNoteScreen> createState() => _AddNoteScreenState();
@@ -38,10 +38,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
       return;
     }
 
-    noteController.addNote(
-      title: title,
-      content: content,
-    );
+    noteController.addNote(title: title, content: content);
 
     Get.back();
   }
@@ -50,12 +47,17 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  Text('Add Note'),
+        backgroundColor: primaryColor,
+        title: Text('Add Note'),
+        leading: GestureDetector(
+          onTap: () {
+            Get.back();
+          },
+
+          child: Icon(Icons.arrow_back_ios),
+        ),
         actions: [
-          IconButton(
-            onPressed: saveNote,
-            icon:  Icon(Icons.check_rounded),
-          ),
+          IconButton(onPressed: saveNote, icon: Icon(Icons.check_rounded)),
         ],
       ),
       body: Padding(
@@ -65,11 +67,8 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
             TextField(
               controller: titleController,
               textInputAction: TextInputAction.next,
-              style: TextStyle(
-                fontSize: 21.sp,
-                fontWeight: FontWeight.bold,
-              ),
-              decoration:  InputDecoration(
+              style: TextStyle(fontSize: 21.sp, fontWeight: FontWeight.bold),
+              decoration: InputDecoration(
                 hintText: 'Title',
                 border: InputBorder.none,
               ),
@@ -85,7 +84,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                 maxLines: null,
                 expands: true,
                 textAlignVertical: TextAlignVertical.top,
-                decoration:  InputDecoration(
+                decoration: InputDecoration(
                   hintText: 'Write your note...',
                   border: InputBorder.none,
                 ),

@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
 
-class RegistrationPage extends StatelessWidget {
-  const RegistrationPage({super.key});
+class SettingPage extends StatelessWidget {
+  const SettingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
 
-
-
-
-
-
-      
     );
   }
 }

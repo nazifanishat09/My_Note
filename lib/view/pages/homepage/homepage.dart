@@ -18,6 +18,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.find<NoteController>();
 
+
     return Scaffold(
       appBar: CustomAppBer(),
       drawer: AppDrawer(),
